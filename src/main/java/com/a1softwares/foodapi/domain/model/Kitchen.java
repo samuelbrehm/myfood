@@ -1,17 +1,15 @@
 package com.a1softwares.foodapi.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class kitchen {
+public class Kitchen {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "tab_name_kitchen")
   private String name;
 
   public Long getId() {
@@ -34,7 +32,7 @@ public class kitchen {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
-    kitchen kitchen = (kitchen) o;
+    Kitchen kitchen = (Kitchen) o;
     return id.equals(kitchen.id);
   }
 
